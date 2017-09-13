@@ -55,7 +55,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void rotate(View view) {
         image.setClickable(false);
-        int sc = new Random().nextInt(round);
+        Random random = new Random();
+        int sc = random.nextInt(100);
+        if (sc >= 0 && sc <= 44) { //45%
+            sc = 0;
+        } else if (sc >= 45 && sc <= 64) { //20%
+            sc = 1;
+        } else if (sc >= 65 && sc <= 79) { //15%
+            sc = 2;
+        } else if (sc >= 80 && sc <= 89) { //10%
+            sc = 3;
+        } else if (sc >= 90 && sc <= 94) { //5%
+            sc = 4;
+        } else if (sc >= 95 && sc <= 97) { //3%
+            sc = 5;
+        } else if (sc >= 98 && sc <= 99) { //2%
+            sc = 6;
+        }
         rotateTo(CurrentRadiosId, sc);
         CurrentRadiosId = sc;
     }
