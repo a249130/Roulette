@@ -24,7 +24,7 @@ public class Roulette extends View {
     //上下文
     private Context context;
     //起始位置
-    private final float StartLocation = 270;
+//    private final float StartLocation = 270;
     //画笔
     private Paint paint;
     //绘制的角度
@@ -57,7 +57,7 @@ public class Roulette extends View {
         //开启抗锯齿
         paint.setAntiAlias(true);
         //初始化轮廓
-        Path path = new Path();
+//        Path path = new Path();
         //实例化轮盘上的文字
         listText = new ArrayList<>();
         //实例化扇面的中心位置（箭头停止的位置）
@@ -158,7 +158,7 @@ public class Roulette extends View {
             //计算每个扇形所占的幅度
             mRadios = 360.0f / mCount;
             for (int i = 0; i < listText.size(); i++) {
-                float start = 270 + mRadios * i;
+                float start = mRadios * i;
                 if (start < 360) {
                     listRadios.add(start);
                 } else {

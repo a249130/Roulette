@@ -1,11 +1,10 @@
 package com.roulette.yk;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView image;
     //定义箭头转动的动画
     private RotateAnimation anim;
-    //轮盘当前所出的位置
+    //轮盘当前所处的位置
     private int CurrentRadiosId;
     //轮盘分割的角度
     private List<Float> listRadios;
@@ -45,11 +44,11 @@ public class MainActivity extends AppCompatActivity {
         listRadios = roulette.getRadioList();
         listImaRadios = new ArrayList<>();
         for (int i = 0; i < listRadios.size(); i++) {
-            float rado = listRadios.get(i) - 270;
+            float rado = listRadios.get(i);
             if (rado > 0 | rado == 0) {
                 listImaRadios.add(rado);
             } else {
-                listImaRadios.add(360+rado);
+                listImaRadios.add(360 + rado);
             }
         }
     }
@@ -59,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         int sc = new Random().nextInt(round);
         rotateTo(CurrentRadiosId, sc);
         CurrentRadiosId = sc;
-
     }
 
     private void rotateTo(final int currentId, int rotateId) {
